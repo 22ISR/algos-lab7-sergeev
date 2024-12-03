@@ -31,3 +31,17 @@
 
 Пример использования isPalindromString("Madam, Anna went to the civic center") # ["madam", "anna", "civic"]
 """
+import re
+
+
+findall = []
+text = input('Введите текст: ')
+
+text = re.sub(r',\s+', ' ', text)
+text = text.split(' ')
+
+for i in range(len(text)):
+    pallindrom = text[i].lower()
+    if pallindrom == pallindrom[::-1]:
+        findall.append(text[i])
+print(findall)
